@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Руководство по оптимизации изображений</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        code { background: #f8f9fa; padding: 2px 5px; border-radius: 3px; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Руководство по оптимизации изображений</h1>
+    
+    <div class="warning">
+        <h3>⚠️ Критические проблемы производительности</h3>
+        <p>Ваши изображения слишком большие и замедляют загрузку сайта:</p>
+        <ul>
+            <li><strong>hero-bg.jpg:</strong> 542KB → должно быть ~100-150KB</li>
+            <li><strong>beast-bg.jpg:</strong> 416KB → должно быть ~80-120KB</li>
+            <li><strong>contact-form-bg.jpg:</strong> 455KB → должно быть ~80-120KB</li>
+            <li><strong>trainer-*.png:</strong> 160-300KB каждый → должно быть ~30-50KB</li>
+            <li><strong>program-*.png:</strong> 60-135KB каждый → должно быть ~20-40KB</li>
+        </ul>
+    </div>
+
+    <h2>Рекомендации по оптимизации:</h2>
+
+    <h3>1. Сжатие изображений</h3>
+    <p>Используйте онлайн-инструменты для сжатия:</p>
+    <ul>
+        <li><a href="https://tinypng.com/" target="_blank">TinyPNG</a> - для PNG файлов</li>
+        <li><a href="https://squoosh.app/" target="_blank">Squoosh</a> - от Google</li>
+        <li><a href="https://imageoptim.com/" target="_blank">ImageOptim</a> - для Mac</li>
+    </ul>
+
+    <h3>2. Конвертация в WebP</h3>
+    <p>WebP формат обеспечивает лучшее сжатие:</p>
+    <pre><code>// Пример использования WebP с fallback
+&lt;picture&gt;
+  &lt;source srcset="image.webp" type="image/webp"&gt;
+  &lt;img src="image.jpg" alt="Описание"&gt;
+&lt;/picture&gt;</code></pre>
+
+    <h3>3. Responsive Images</h3>
+    <p>Добавьте разные размеры для разных экранов:</p>
+    <pre><code>&lt;img srcset="small.jpg 300w,
+             medium.jpg 600w,
+             large.jpg 900w"
+     sizes="(max-width: 600px) 300px,
+            (max-width: 900px) 600px,
+            900px"
+     src="large.jpg" alt="Описание"&gt;</code></pre>
+
+    <h3>4. Оптимизация фоновых изображений</h3>
+    <p>Используйте CSS для оптимизации:</p>
+    <pre><code>/* Оптимизированный CSS */
+.hero {
+  background-image: url('hero-bg-small.jpg');
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('hero-bg-medium.jpg');
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    background-image: url('hero-bg-large.jpg');
+  }
+}</code></pre>
+
+    <div class="success">
+        <h3>✅ Что уже исправлено:</h3>
+        <ul>
+            <li>Убран дублирующий Slick slider</li>
+            <li>Добавлен lazy loading для изображений</li>
+            <li>Оптимизирована загрузка скриптов (defer)</li>
+            <li>Добавлен preload для критических ресурсов</li>
+            <li>Добавлены loading="lazy" атрибуты</li>
+        </ul>
+    </div>
+
+    <h3>5. Дополнительные оптимизации</h3>
+    <ul>
+        <li><strong>CDN:</strong> Используйте CDN для статических ресурсов</li>
+        <li><strong>Кэширование:</strong> Настройте правильные заголовки кэширования</li>
+        <li><strong>Gzip:</strong> Включите сжатие на сервере</li>
+        <li><strong>HTTP/2:</strong> Используйте современный протокол</li>
+    </ul>
+
+    <h3>6. Инструменты для анализа</h3>
+    <ul>
+        <li><a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a></li>
+        <li><a href="https://gtmetrix.com/" target="_blank">GTmetrix</a></li>
+        <li><a href="https://web.dev/measure/" target="_blank">Web.dev Measure</a></li>
+    </ul>
+
+    <p><strong>Ожидаемый результат:</strong> Время загрузки должно сократиться с 15 секунд до 2-4 секунд после оптимизации изображений.</p>
+</body>
+</html>
+

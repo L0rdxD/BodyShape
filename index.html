@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BodyShape</title>
+    
+    <!-- Preload критических ресурсов -->
+    <link rel="preload" href="./img/logo.png" as="image" />
+    <link rel="preload" href="./img/hero-bg.jpg" as="image" />
+    
+    <!-- Оптимизированная загрузка шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    
+    <!-- CSS файлы -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> 
+  </head>
+  <body class="page">
+    <!-- Header / Hero -->
+    <header class="hero">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent hero__navbar">
+        <div class="container">
+          <a class="navbar-brand hero__brand" href="#">
+            <img src="./img/logo.png" alt="BodyShape" class="hero__logo img-fluid" loading="eager" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+            <ul class="navbar-nav hero__menu">
+              <li class="nav-item"><a class="nav-link" href="#trainers">ИНСТРУКТОРЫ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#programs">СЕКЦИИ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#intensive">ИНТЕНСИВ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacts">КОНТАКТЫ</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+      <div class="header-img">
+				<img src="./img/hero-logo.png" alt="BodyShape" loading="eager" decoding="async">
+        </div>
+			</div>
+    </header>
+
+    <!-- Trainers -->
+    <section id="trainers" class="section section--trainers">
+      <div class="container">
+        <div class="section-header text-center pb-5">
+          <h2 class="section-header__title">ПЕРСОНАЛЬНЫЕ ТРЕНЕРЫ</h2>
+          <p class="section-header__subtitle">В нашей команде профессиональные тренеры, которые помогут вам достичь ваших фитнес-целей.<br> Индивидуальный подход, мотивация и поддержка на каждом этапе вашего пути к успеху.</p>
+        </div>
+
+        <div class="trainers-swiper-container">
+  <div class="swiper trainers-swiper">
+    <div class="swiper-wrapper">
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-01.png')"></div>
+          <p class="trainer-card__name">vincent graham</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-02.png')"></div>
+          <p class="trainer-card__name">selena vayne</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-03.png')"></div>
+          <p class="trainer-card__name">michal brown</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-04.png')"></div>
+          <p class="trainer-card__name">silva wilson</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-05.png')"></div>
+          <p class="trainer-card__name">brain thompson</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-06.png')"></div>
+          <p class="trainer-card__name">sonya walker</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-07.png')"></div>
+          <p class="trainer-card__name">amily gray</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="trainer-card">
+          <div class="trainer-card__image" style="background-image: url('./img/trainer/trainer-08.png')"></div>
+          <p class="trainer-card__name">latisha ramirez</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Пагинация (точки) -->
+    <div class="swiper-pagination"></div>
+  </div>
+   <!-- Стрелки -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+      </div>
+    </section>
+
+    <!-- Beast -->
+    <section id="intensive" class="section section--beast">
+      <div class="container">
+        <div class="beast__content">
+          <h2 class="beast__title">РЕЖИМ ЗВЕРЯ</h2>
+          <p class="beast__text">Ультраинтенсивные тренировки для тех, кто стремится выйти за пределы своих возможностей. Силовые и кардиотренировки высокой интенсивности помогут развить выносливость, мощь и непоколебимую уверенность в себе.</p>
+          <a href="#contacts" class="btn btn-accent beast__btn">ЗАПИСАТЬСЯ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="section section--programs">
+      <div class="container">
+        <div class="section-header text-center pb-5">
+          <h2 class="section-header__title">ПРОГРАММЫ<br />И СЕКЦИИ</h2>
+          <p class="section-header__subtitle">Разнообразные тренировки и занятия для всех уровней подготовки.<br> Найдите свою идеальную программу и начните путь к здоровью и силе.</p>
+        </div>
+        <div class="program-swiper-container">
+  <div class="swiper program-swiper">
+    <div class="swiper-wrapper">
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-01.png')"></div>
+          <p class="program-card__title">ТРЕНЕРОВКИ</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-02.png')"></div>
+          <p class="program-card__title">КРОССФИТ</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-03.png')"></div>
+          <p class="program-card__title">ПИЛАТЕС</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-04.png')"></div>
+          <p class="program-card__title">АЭРОБИКА</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-05.png')"></div>
+          <p class="program-card__title">ВЫНОСЛИВОСТЬ</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-06.png')"></div>
+          <p class="program-card__title">ВЫСТУПЛЕНИЯ</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-07.png')"></div>
+          <p class="program-card__title">ФИТНЕС</p>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="program-card">
+          <div class="program-card__image" style="background-image: url('./img/programs/program-08.png')"></div>
+          <p class="program-card__title">РЕЛЬЕФ</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Пагинация (точки) -->
+    <div class="swiper-pagination"></div>
+  </div>
+   <!-- Стрелки -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="section section--contacts">
+      <div class="container">
+        <h2 class="contacts__title">НАПИСАТЬ НАМ</h2>
+        <form class="contact-form">
+          <div class="contact-form__group">
+            <label for="name" class="contact-form__label">Ваше имя</label>
+            <input id="name" type="text" class="contact-form__input" placeholder="Юрий" />
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="phone">Номер для обратной связи</label>
+            <input type="text" id="phone" class="contact-form__input" name="phone" placeholder="+7 (___) ___-__-__" />
+          </div>
+          <div class="contact-form__group">
+             <label for="email" class="label">E-mail</label>
+           <input id="email" type="email" class="contact-form__input">
+          </div>
+          <div class="contact-form__group contact-form__group--textarea">
+            <label class="contact-form__label">Сообщение</label>
+            <textarea class="contact-form__textarea" rows="5" placeholder="Меня зовут Юрий, и я заинтересован в ваших услугах. Хотелось бы узнать больше о программах тренировок и возможностях записи. Заранее спасибо за ответ!"></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent contact-form__submit">ОТПРАВИТЬ</button>
+        </form>
+      </div>
+      
+    </section>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acd0a468c716a7e6d51a48df067b4792433ef5e8e0ca85ec093ab337e045783b2&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4 ">
+           <div class="col-12 col-lg-4 d-flex justify-content-center">
+              <p class="mb-1">г. Москва, ул. Тверская, д. 12, стр. 1 <br />Россия, 125009</p>
+            </div>
+               <div class="col-12 col-lg-4 d-flex justify-content-center">
+              <p class="mb-0">Телефон +7 (800) 12 34 567<br />info@bodyshape.ru</p>
+            </div>
+            <div class="col-12 col-lg-4 d-flex justify-content-center">
+            <ul class="footer__social list-inline mb-0">
+              <li class="list-inline-item"><a class="footer__social-link" href="#" aria-label="VK"><img class="footer__social-icon" src="./img/footer-icons/icon-vk.svg" alt="VK" loading="lazy"></a></li>
+              <li class="list-inline-item"><a class="footer__social-link" href="#" aria-label="Rutube"><img class="footer__social-icon" src="./img/footer-icons/icon-rutube.svg" alt="Rutube" loading="lazy"></a></li>
+              <li class="list-inline-item"><a class="footer__social-link" href="#" aria-label="Dzen"><img class="footer__social-icon" src="./img/footer-icons/icon-dzen.svg" alt="Dzen" loading="lazy"></a></li>
+              <li class="list-inline-item"><a class="footer__social-link" href="#" aria-label="Telegram"><img class="footer__social-icon" src="./img/footer-icons/icon-telegram.svg" alt="Telegram" loading="lazy"></a></li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </footer>      
+    
+    <!-- Оптимизированная загрузка скриптов -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/input-mask.js" defer></script>
+    <script src="js/swiper-config.js" defer></script>
+
+  </body>
+</html>
+
+
