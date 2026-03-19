@@ -205,23 +205,24 @@
     <section id="contacts" class="section section--contacts">
       <div class="container">
         <h2 class="contacts__title">НАПИСАТЬ НАМ</h2>
-        <form class="contact-form">
+        <form class="contact-form" action="process_form.php" method="POST" id="contactForm">
           <div class="contact-form__group">
             <label for="name" class="contact-form__label">Ваше имя</label>
-            <input id="name" type="text" class="contact-form__input" placeholder="Юрий" />
+            <input id="name" type="text" name="name" class="contact-form__input" placeholder="Юрий" required />
           </div>
           <div class="contact-form__group">
             <label class="contact-form__label" for="phone">Номер для обратной связи</label>
-            <input type="text" id="phone" class="contact-form__input" name="phone" placeholder="+7 (___) ___-__-__" />
+            <input type="text" id="phone" class="contact-form__input" name="phone" placeholder="+7 (___) ___-__-__" required />
           </div>
           <div class="contact-form__group">
              <label for="email" class="label">E-mail</label>
-           <input id="email" type="email" class="contact-form__input">
+           <input id="email" type="email" name="email" class="contact-form__input" required>
           </div>
           <div class="contact-form__group contact-form__group--textarea">
             <label class="contact-form__label">Сообщение</label>
-            <textarea class="contact-form__textarea" rows="5" placeholder="Меня зовут Юрий, и я заинтересован в ваших услугах. Хотелось бы узнать больше о программах тренировок и возможностях записи. Заранее спасибо за ответ!"></textarea>
+            <textarea class="contact-form__textarea" name="message" rows="5" placeholder="Меня зовут Юрий, и я заинтересован в ваших услугах. Хотелось бы узнать больше о программах тренировок и возможностях записи. Заранее спасибо за ответ!" required></textarea>
           </div>
+          <div id="formMessage" class="contact-form__message" style="display: none;"></div>
           <button type="submit" class="btn btn-accent contact-form__submit">ОТПРАВИТЬ</button>
         </form>
       </div>
@@ -257,6 +258,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="js/input-mask.js" defer></script>
     <script src="js/swiper-config.js" defer></script>
+    <script src="js/form-handler.js" defer></script>
 
   </body>
 </html>

@@ -238,6 +238,24 @@ font-family: 'Bebas Neue', sans-serif;
 .contact-form__input::placeholder, .contact-form__textarea::placeholder { color: var(--color-white); opacity: 1; }
 .contact-form__textarea { resize: vertical; min-height: 120px; }
 .contact-form__submit { align-self: center; width: 214px; height: 52px; }
+.contact-form__message {
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.contact-form__message--success {
+  background-color: rgba(76, 175, 80, 0.2);
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+}
+.contact-form__message--error {
+  background-color: rgba(244, 67, 54, 0.2);
+  border: 1px solid #f44336;
+  color: #f44336;
+}
 
 /* Footer */
 .footer { padding: 40px 0; }

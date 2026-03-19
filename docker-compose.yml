@@ -1,0 +1,57 @@
+services:
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: bodyshape-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php
+    networks:
+      - bodyshape-net
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bodyshape-php
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - bodyshape-net
+
+  db:
+    image: postgres:16-alpine
+    container_name: bodyshape-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bodyshape-net
+
+volumes:
+  pgdata:
+
+networks:
+  bodyshape-net:
+    driver: bridge
